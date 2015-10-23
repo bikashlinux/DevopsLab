@@ -1,22 +1,18 @@
 #!/bin/bash
-echo "Running pre-commit hook"
-/usr/bin/curl --user devops:devops -s http://localhost:8080/job/M2/build?token=12345
-
-echo "Trying to fetch build status for current build......"
-sleep 10
-JSON=$(wget -qO- http://127.0.0.1:8080/job/M2/lastBuild/api/json)
-RESULT=$(echo $JSON | grep -oe '"result":"\w\+"' | cut -d \" -f4 | tr -d '\n')
-
-while [ -z $RESULT ]; do
-    echo "Waiting for the build to get completed"
-    sleep 5
-    JSON=$(wget -qO- http://127.0.0.1:8080/job/M2/lastBuild/api/json)
-    RESULT=$(echo $JSON | grep -oe '"result":"\w\+"' | cut -d \" -f4 | tr -d '\n')
+#
+# An example hook script to verify what is about to be committed.
+# Called by "git commit" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message if
+# it wants to stop the commit.
+#
+# To enable this hook, rename this file to "pre-commit".
+echo "Running pre commit hook"
+for FILE in `git diff-index --name-status HEAD -- | cut -c3-` ; do
+    result=$(python detect_keys.py $FILE)
+    if [ $result = "true" ]; then
+        echo "$FILE contains a key!!"
+        echo "Rejecting this commit"
+        exit 1
 done
 
-echo "Found build status"
-
-if [ $RESULT = "FAILURE" ]; then
-    exit 1
-fi
 
