@@ -15,7 +15,6 @@ public class Calculator {
      *  @return sum of a and b
      */
     public final int sum(final boolean flag, final int a, final int b) {
-        System.out.println("######################################");
         if (flag) {
             return a + b;
         } else {
