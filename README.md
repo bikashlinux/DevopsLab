@@ -4,7 +4,7 @@
 We have used Jenkins as the Build server for this task. We have used a sample Maven Project for calculator operations cloned from [here] (https://github.com/kranonit/calculator-unit-test-example-java). 
 
 As a part of this milestone, we will demonstrate the following:
-* The ability to run JUnit Tests 
+* The ability to run JUnit Tests and report them using Cobertura
 * Create random tests using Randoop for unit test generation through Eclipse
 * Run static analysis using Checkstyle
 * Custom analysis by adding two checks in checkstyle's xml
@@ -12,6 +12,13 @@ As a part of this milestone, we will demonstrate the following:
 * Rejecting commits if there are files which contain security tokens of AWS/Digital Ocean or private ssh keys
 
 We have created a job in Jenkins that would track a local git repository. Build would be triggered by a post-commit hook. For rejecting commits on test failure or checkstyle errors, the build status inside Jenkins would be set to `Failure`. The post-commit hook would read the build status and if it detects a `Failed Build`, we are reseting the repo to the previous commit, thus rejecting this commit.
+
+### Pre-requisites ###
+* Java
+* Git
+* Maven
+* Jenkins
+* Please refer [here] (https://github.com/amittal91/DevOps-Project-Milestone1.git) for setup instructions
 
 ### Test ###
 * Used Cobertura for reporting code coverage
@@ -33,7 +40,7 @@ We have created a job in Jenkins that would track a local git repository. Build 
   * Maven: Update pom.xml to include `maven-checkstyle-plugin`
   * Jenkins: Go to Manage Jenkins --> Manage Plugins --> Install `Checkstyle Plugin`
 * Initial Build would pick up the default Checkstyle xml namely sun-checks.xml
-* For customizing the static analysis, we used the default xml and copied the contents inside `checkstyle.xml`. We added two additionals rules in the end
+* For customizing the static analysis, we used the default xml, created a new xml namely `checkstyle.xml` and copied the contents inside `checkstyle.xml`. We added two additionals rules with custom regular expressions in the end
   * Detect `@author` tags and report warnings
   * Detect classes that begin with lowercase and report errors
 * Now the build generates the checkstyle errors based on the new xml namely `checkstyle.xml`
