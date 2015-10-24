@@ -30,5 +30,8 @@ As a part of this task, we will demonstrate the following:
   * Maven: Update pom.xml to include `maven-checkstyle-plugin`
   * Jenkins: Go to Manage Jenkins --> Manage Plugins --> Install `Checkstyle Plugin`
 * Initial Build would pick up the default Checkstyle xml namely sun-checks.xml
+* For customizing the static analysis, we used the default xml and copied the contents inside `checkstyle.xml`. We added two additionals rules in the end
+  * Detect `@author` tags and report warnings
+  * Detect classes that begin with lowercase and report errors
 
 ### Screencast Link ###
