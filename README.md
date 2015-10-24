@@ -14,13 +14,21 @@ As a part of this task, we will demonstrate the following:
 ### Test ###
 * Used Cobertura for reporting code coverage
 * Configured Cobertura plugin in Maven and Jenkins
+  * Maven: Update pom.xml to include `cobertura-maven-plugin`
+  * Jenkins: Go to Manage Jenkins --> Manage Plugins --> Install `Cobertura Plugin`
 * Initial Build displays the coverage report in Jenkins with low coverage
 * Opened the project in Eclipse
 * Configured Randoop plugin in Eclipse
-* Run the Calculator.java file as 'Randoop Test Input' and customize the directory and number of tests
+  * Open Help --> Install new plugin --> Enter this url `http://randoop.googlecode.com/hg/plugin.updateSite/`
+* Run the Calculator.java file as 'Randoop Test Input' and customize the directory to 'src/test/java' and number of tests to any random number like 100
 * This generates random unit tests for Calculator.java and maven will include these in addition to the existing tests for running unit tests
 * Now the Build displays the coverage report in Jenkins with improved coverage
 
 ### Analysis ###
+* We have used CheckStyle as the static analysis tool
+* Configured CheckStyle plugin in Maven and Jenkins
+  * Maven: Update pom.xml to include `maven-checkstyle-plugin`
+  * Jenkins: Go to Manage Jenkins --> Manage Plugins --> Install `Checkstyle Plugin`
+* Initial Build would pick up the default Checkstyle xml namely sun-checks.xml
 
 ### Screencast Link ###
