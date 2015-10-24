@@ -1,9 +1,9 @@
 # DevOps-Project : Milestone 2 (M2), TEST + ANALYSIS
 
 ### Introduction ###
-We have used Jenkins as the Build server for this task. We have used a sample Apache Maven Project for calculator operations. 
+We have used Jenkins as the Build server for this task. We have used a sample Maven Project for calculator operations cloned from [here] (https://github.com/kranonit/calculator-unit-test-example-java). 
 
-As a part of this task, we will demonstrate the following:
+As a part of this milestone, we will demonstrate the following:
 * The ability to run JUnit Tests 
 * Create random tests using Randoop for unit test generation through Eclipse
 * Run static analysis using Checkstyle
@@ -37,4 +37,9 @@ As a part of this task, we will demonstrate the following:
 * Now the build generates the checkstyle errors based on the new xml namely `checkstyle.xml`
 * For failing the build based on checkstyle errors, we configured Maven Goals with the additional Goal `checkstyle:check`
 
+### Tokens & Private keys ###
+* We have written a pre-commit hook to detect if any file in the current git-diff contains security credentials or private ssh keys
+* We have written a python script that would test if any file from the current diff contains such credentials. If yes, the commit would be rejected and no build will be triggered
+
 ### Screencast Link ###
+[Demo] (https://youtu.be/aB3Yjv4tjMg)
