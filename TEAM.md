@@ -16,6 +16,6 @@ Team Trilith
 | 3. | Implementing Randoop for random test case generation | Karishma Nimgaonkar |
 | 4. | Configuring static analysis tool Checkstyle - Maven & Jenkins | Apoorv Mittal, Karishma Nimgaonkar, Abhishek Preman |
 | 5. | Custom Analyis | Karishma Nimgaonkar, Abhishek Preman | 
-| 6. | Rejecting commits on failed tests or checkstyle errors | Apoorv Mittal |
-| 7. | Parsing security tokens and rejecting commit | Abhishek Preman |
+| 6. | Rejecting commits on failed tests or checkstyle errors and post-commit hook | Apoorv Mittal |
+| 7. | Parsing security tokens and rejecting commit and pre-commit hook | Abhishek Preman |
 | 8. | Demo | Karishma Nimgaonkar, Apoorv Mittal, Abhishek Preman|
