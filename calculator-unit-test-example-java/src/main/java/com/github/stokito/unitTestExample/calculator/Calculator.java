@@ -1,7 +1,7 @@
 package com.github.stokito.unitTestExample.calculator;
 
 /**
- * Class Calculator to perform basic calculator operations.
+ * Class Calculator to perform basic calculator operations .
  * @author "karishma nimgaonkar"
  */
 
@@ -15,6 +15,7 @@ public class Calculator {
      *  @return sum of a and b
      */
     public final int sum(final boolean flag, final int a, final int b) {
+        
         if (flag) {
             return a + b;
         } else {
@@ -51,5 +52,9 @@ public class Calculator {
     public final int multiply(final int a, final int b) {
         return a * b;
     }
+
+}
+
+class test {
 
 }
