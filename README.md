@@ -11,6 +11,8 @@ As a part of this milestone, we will demonstrate the following:
 * Rejecting commits if tests fail or checkstyle generates errors
 * Rejecting commits if there are files which contain security tokens of AWS/Digital Ocean or private ssh keys
 
+We have created a job in Jenkins that would track a local git repository. Build would be triggered by a post-commit hook. For rejecting commits on test failure or checkstyle errors, the build status inside Jenkins would be set to `Failure`. The post-commit hook would read the build status and if it detects a `Failed Build`, we are reseting the repo to the previous commit, thus rejecting this commit.
+
 ### Test ###
 * Used Cobertura for reporting code coverage
 * Configured Cobertura plugin in Maven and Jenkins
