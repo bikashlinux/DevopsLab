@@ -25,7 +25,7 @@ We have created a job in Jenkins that would track a local git repository. Build 
 * Run the Calculator.java file as 'Randoop Test Input' and customize the directory to 'src/test/java' and number of tests to any random number like 100
 * This generates random unit tests for Calculator.java and maven will include these in addition to the existing tests for running unit tests
 * Now the Build displays the coverage report in Jenkins with improved coverage
-* The build would fail incase there is any test case which is failing
+* For failing the build based on failed tests, we configured MAVEN_OPTS with the following command `-Dmaven.test.failure.ignore=false`
 
 ### Analysis ###
 * We have used CheckStyle as the static analysis tool
