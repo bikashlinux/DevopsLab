@@ -1,4 +1,4 @@
-# DevOps-Project : Milestone 2 (M2)
+# DevOps-Project : Milestone 2 (M2), TEST + ANALYSIS
 
 ### Introduction ###
 We have used Jenkins as the Build server for this task. We have used a sample Apache Maven Project for calculator operations. 
@@ -23,6 +23,7 @@ As a part of this task, we will demonstrate the following:
 * Run the Calculator.java file as 'Randoop Test Input' and customize the directory to 'src/test/java' and number of tests to any random number like 100
 * This generates random unit tests for Calculator.java and maven will include these in addition to the existing tests for running unit tests
 * Now the Build displays the coverage report in Jenkins with improved coverage
+* The build would fail incase there is any test case which is failing
 
 ### Analysis ###
 * We have used CheckStyle as the static analysis tool
@@ -33,5 +34,7 @@ As a part of this task, we will demonstrate the following:
 * For customizing the static analysis, we used the default xml and copied the contents inside `checkstyle.xml`. We added two additionals rules in the end
   * Detect `@author` tags and report warnings
   * Detect classes that begin with lowercase and report errors
+* Now the build generates the checkstyle errors based on the new xml namely `checkstyle.xml`
+* For failing the build based on checkstyle errors, we configured Maven Goals with the additional Goal `checkstyle:check`
 
 ### Screencast Link ###
