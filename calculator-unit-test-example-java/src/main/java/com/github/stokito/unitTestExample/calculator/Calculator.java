@@ -2,7 +2,7 @@ package com.github.stokito.unitTestExample.calculator;
 
 /**
  * Class Calculator to perform basic calculator operations .
- * @author "karishma nimgaonkar"
+ * @author "bikash pattnayak"
  */
 
 public class Calculator {
@@ -19,7 +19,7 @@ public class Calculator {
         if (flag) {
             return a + b;
         } else {
-            return 0
+            return 0;
         }
     }
 
