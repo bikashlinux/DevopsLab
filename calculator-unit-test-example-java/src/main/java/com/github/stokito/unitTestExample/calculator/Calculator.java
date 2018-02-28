@@ -19,7 +19,7 @@ public class Calculator {
         if (flag) {
             return a + b;
         } else {
-            return 0;
+            return 0
         }
     }
 
