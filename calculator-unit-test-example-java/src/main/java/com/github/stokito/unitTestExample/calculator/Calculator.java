@@ -31,7 +31,7 @@ public class Calculator {
      */
     public final int minus(final int a, final int b) {
         return a + b; // ERROR!!!
-    }
+      }
 
     /**
      *  return division.
